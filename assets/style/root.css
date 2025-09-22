@@ -1,0 +1,28 @@
+/* 색상, 폰트 등 설정 */
+:root {
+  /* 메인 컬러 */
+  --color-primary: #ff6b35;
+
+  /* 서브 컬러 */
+  --color-secondary-1: #ffd166;
+  --color-secondary-2: #f4a261;
+
+  /* 포인트 컬러 */
+  --color-accent-1: #6a994e;
+  --color-accent-2: #432818;
+
+  /* 배경 컬러 */
+  --color-bg-light: #faf3e0;
+  --color-bg-dark: #2b2b2b;
+
+  /* 텍스트 컬러 */
+  --color-text-main: #2b2b2b;
+  --color-text-light: #ffffff;
+  --color-text-point-1: #ff6b35;
+  --color-text-point-2: #6a994e;
+}
+
+@font-face {
+  font-family: 'HanSam';
+  src: url('../font/SpoqaHanSansNeo-Regular.otf') format('woff2');
+}

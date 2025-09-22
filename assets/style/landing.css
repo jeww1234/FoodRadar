@@ -1,0 +1,54 @@
+.slide-area {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+}
+
+.header-left-img,
+.header-right-img {
+  flex: 1;
+  position: relative;
+}
+.header-left-img img,
+.header-right-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.filter {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--color-bg-dark);
+  opacity: 70%;
+  top: 0;
+  left: 0;
+}
+
+.goto-main-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+.goto-main-btn img {
+  border-radius: 100%;
+  scale: 0.3;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: 'HanSam';
+  color: var(--color-text-point-1);
+  font-size: 3vw;
+  font-weight: bold;
+}
