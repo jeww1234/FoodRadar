@@ -1,0 +1,15 @@
+:root {
+  /* Base Colors */
+  --black-color: #000000;
+  --white-color: #FFFFFF;
+
+  /* Primary */
+  --primary-color01: #445DC4;
+
+  /* Sub Colors */
+  --sub-color01: #A8B4D0;
+  --sub-color02: #F2EFEC;
+
+  /* Point Colors */
+  --point-color01: #46C6BB;
+}

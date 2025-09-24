@@ -3,30 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>요기 어때?</title>
-  <!-- ico -->
-   <link rel="icon" href="./assets/images/icons/logo.ico">
+  <title>약품 지킴이</title>
   <!-- css -->
-  <link rel="stylesheet" href="./assets/style/root.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
   <link rel="stylesheet" href="./assets/style/common.css">
-  <link rel="stylesheet" href="./assets/style/landing.css">
+  <script type="module" src="./assets/js/main.js"></script>
 </head>
 <body>
-  <!-- 처음 보여지는 영역 -->
-  <div class="slide-area">
-    <div class="header-left-img"> <!-- 슬라이드 -->
-      <img src="./assets/images/pic/japanese-food-2.jpg" alt="왼쪽 음식 이미지">
-    </div>
-    <div class="header-right-img"> <!-- 슬라이드 -->
-      <img src="./assets/images/pic/korean-food-2.jpg" alt="오른쪽 음식 이미지">
-    </div>
-  </div>
-  <div class="filter"></div>
+  <header class="header">
+    <h1 class="logo">My Project</h1>
+  </header>
 
-  <!-- 메인 내용 -->
-  <a class="goto-main-btn" href="./main.html"><img src="./assets/images/pic/logo.png" alt="로고"></a>  <!-- 메인 페이지 이동 -->
-  <div class="header-text">오늘 뭐 먹지?</div> <!-- 타이핑 효과 -->
-  <!-- script -->
-  <script src="./js/test.js"></script>
+  <main id="fullpage" class="main">
+    <!-- Section 1 -->
+    <section id="section1" class="section section01" aria-labelledby="약품 지킴이 소개">
+      <div class="inner">
+        <h2 id="section1-title">섹션 1: 약품지킴이</h2>
+        <p>여기는 첫 번째 섹션 콘텐츠 영역입니다.</p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section2" class="section section02" aria-labelledby="약 성분 검색">
+      <div class="inner">
+        <h2 id="section2-title">섹션 2: 서비스</h2>
+        <p>두 번째 섹션 내용이 들어갑니다.</p>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="section2" class="section section03" aria-labelledby="약 병용금기 비교">
+      <div class="inner">
+        <h2 id="section2-title">섹션 3: 서비스</h2>
+        <p>세 번째 섹션 내용이 들어갑니다.</p>
+      </div>
+    </section>
+
+    <!-- Section 4 (Swiper) -->
+    <section id="section4" class="section section04" aria-labelledby="관련 도서">
+      <div class="inner">
+        <h2 id="section4-title">섹션 4: 갤러리</h2>
+        <!-- Swiper container -->
+        <div class="custom-container">
+          <div class="swiper custom-swiper">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 1</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 2</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 3</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 4</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 5</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 6</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 7</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 8</figcaption>
+                </figure>
+              </article>
+              <article class="swiper-slide">
+                <figure class="card">
+                  <div class="thumb"></div>
+                  <figcaption class="title">아이템 10</figcaption>
+                </figure>
+              </article>
+            </div>
+          </div>
+          <!-- Swiper navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>&copy; 제작 참여</small>
+    <ul>
+      <li><a>item</a></li>
+      <li><a>item</a></li>
+      <li><a>item</a></li>
+      <li><a>item</a></li>
+      <li><a>item</a></li>
+    </ul>
+    <p>포트폴리오를 위한 사이트 입니다<br>
+상업적 목적이 없습니다</p>
+  </footer>
+
+  <!-- fullPage.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 </html>
