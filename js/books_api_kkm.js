@@ -2,7 +2,7 @@
 // import fs from "fs";
 // import dotenv from "dotenv";
 // dotenv.config();    
-// const key = process.env.key; // 국립중앙도서관 API 키 입력
+// const key = process.env.api_key; // 국립중앙도서관 API 키 입력
 // let abcd = [];
 
 // // 검색 함수
