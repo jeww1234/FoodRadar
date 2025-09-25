@@ -51,7 +51,7 @@
 }
 
 /*----------------------
-  Main
+  Main Layout
 ----------------------*/
 .section {
   height: 100vh;
@@ -63,7 +63,7 @@
 }
 
 .section01 {
-  color: #fff;
+  color: var(--black-color);
   background-color: var(--primary-color01);
 }
 
@@ -90,6 +90,54 @@
   margin: 0 auto;
   height: 100%;
 }
+
+/*----------------------
+  Section01: Visual
+----------------------*/
+.visual-swiper,
+.visual-swiper .swiper-wrapper,
+.visual-swiper .swiper-slide {
+  width: 100%;
+  height: 100vh;
+}
+
+.visual-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.visual-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.visual-slide.slide1 { background-image: url('../images/bg/bg_visual_01.png'); }
+.visual-slide.slide2 { background-image: url('../images/bg/bg_visual_02.png'); }
+.visual-slide.slide3 { background-image: url('../images/bg/about_bg01.jpg'); }
+
+.visual-content {
+  color: var(--black-color);
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 6.4rem;
+}
+
+.sub-title {
+  font-size: 2.8rem;
+}
+
 
 /*----------------------
   Fullpage

@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 100;
+  font-style: normal;
+  src: url('/assets/fonts/SpoqaHanSansNeo-Thin.woff2') format('woff2'),
+       url('/assets/fonts/SpoqaHanSansNeo-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/assets/fonts/SpoqaHanSansNeo-Light.woff2') format('woff2'),
+       url('/assets/fonts/SpoqaHanSansNeo-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/assets/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+       url('/assets/fonts/SpoqaHanSansNeo-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/assets/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+       url('/assets/fonts/SpoqaHanSansNeo-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/assets/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+       url('/assets/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
+}
+
+:where(html) {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  :where(html) {
+    font-size: 56.25%;
+  }
+}
+@media (min-width: 1920px) {
+  :where(html) {
+    font-size: 68.75%;
+  }
+}
