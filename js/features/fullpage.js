@@ -5,7 +5,7 @@ export default function initFullpage() {
   new fullpage('#fullpage', {
     autoScrolling: true,
     navigation: true,
-    navigationTooltips: ['소개', '서비스', '갤러리', '관련도서'],
+    navigationTooltips: ['홈', '검색', '비교', '도서'],
     showActiveTooltip: true,
     navigationPosition: 'right',
 
@@ -15,11 +15,11 @@ export default function initFullpage() {
       const nav = document.querySelector('#fp-nav');
 
       // header
-      if (destination.index === 0) {
-        header?.classList.remove('hidden');
-      } else {
-        header?.classList.add('hidden');
-      }
+      // if (destination.index === 0) {
+      //   header?.classList.remove('hidden');
+      // } else {
+      //   header?.classList.add('hidden');
+      // }
 
       // footer
       if (destination.isLast) {

@@ -11,64 +11,220 @@
     href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
   />
   <link rel="stylesheet" href="./assets/style/common.css">
-  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./js/style_ui_yhy.js"></script>
 </head>
 <body>
-  <header class="header">
+  <!-- <header class="header">
     <h1 class="logo">약품지킴이</h1>
-  </header>
+  </header> -->
 
   <main id="fullpage" class="main">
     <!-- Section 1 -->
-    <section id="section1" class="section section01">
+    <section id="section1" class="section visual">
       <div class="swiper visual-swiper">
         <div class="swiper-wrapper">
           <article class="swiper-slide visual-slide slide1">
             <div class="visual-content">
               <p class="sub-title">약품에 대해서 모를땐?</p>
-              <h2 class="title">약품지킴이</h2>
+              <h2 class="visual-title">약품지킴이</h2>
             </div>
           </article>
           <article class="swiper-slide visual-slide slide2">
             <div class="visual-content">
-              <p class="sub-title">약품에 대해서 모를땐?</p>
-              <h2 class="title">약품지킴이</h2>
+              <p class="sub-title">두번째 비주얼 설명입니다.</p>
+              <h2 class="visual-title">두번째 비주얼</h2>
             </div>
           </article>
           <article class="swiper-slide visual-slide slide3">
             <div class="visual-content">
-              <p class="sub-title">약품에 대해서 모를땐?</p>
-              <h2 class="title">약품지킴이</h2>
+              <p class="sub-title">세번째 비주얼 설명입니다.</p>
+              <h2 class="visual-title">세번째 비주얼</h2>
             </div>
           </article>
         </div>
 
-        <!-- Navigation -->
+        <!-- Navigation (필요시 추가) -->
         <!-- <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div> -->
-        <!-- Pagination -->
+        <!-- Pagination (필요시 추가) -->
         <!-- <div class="swiper-pagination"></div> -->
       </div>
     </section>
     
-    <!-- Section 2 -->
-    <section id="section2" class="section section02" aria-labelledby="약 성분 검색">
+    <!-- Section: 약 성분 검색 -->
+    <section id="section2" class="section ingredient" aria-labelledby="약 성분 검색">
       <div class="inner">
-        <h2>섹션 2: 서비스</h2>
-        <p class="sub-title">두 번째 섹션 내용이 들어갑니다.</p>
+        <h2 class="title primary">약 성분 <b>검색</b></h2>
+        <div class="content">
+          <form class="search-form" role="search" aria-label="약 성분 검색">
+            <label for="ingredient-search" class="sr-only">약 성분명 검색</label>
+            <input
+              type="search"
+              id="ingredient-search"
+              class="input"
+              name="ingredient"
+              placeholder="제품을 입력해주세요"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="btn-icon" aria-label="검색">
+              <span aria-hidden="true"><img src="./assets/images/icon/ico_search.svg" alt=""></span>
+            </button>
+          </form>
+          <div class="col3">
+            <!-- 제품리스트 -->
+            <article class="box">
+              <h3 class="box-title">제품리스트</h3>
+              <ul class="list scroll">
+                <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
+                <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
+                <li><p>대한민국에서 생산된 어린이용 타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)과 함께 추가적으로 함유된 비타민C, </p></li>
+                <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
+                <li><p>대한민국에서 생산된 어린이용 타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)과 함께 추가적으로 함유된 비타민C, </p></li>
+              </ul>
+            </article>
+            <!-- 이미지 -->
+            <article class="box">
+              <h3 class="box-title line">이미지</h3>
+              <div class="content">
+                <figure class="box-img">
+                  <img src="./assets/images/temp/pic_temp_detail.png" alt="약품 이미지">
+                  <figcaption class="sr-only">샘플 약품 이미지</figcaption>
+                </figure>
+              </div>
+            </article>
+            <!-- 정보 -->
+            <article class="box">
+              <h3 class="box-title line">정보</h3>
+              <section class="table-area scroll">
+                <table class="table tb-info">
+                  <colgroup>
+                    <col style="width: 40%;">
+                    <col style="width: 60%;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>한글 설명</th>
+                      <th>예시</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>제품명</th>
+                      <td>약품의 이름 (예: 삼스카정 30밀리그램)</td>
+                    </tr>
+                    <tr>
+                      <th>효능·효과</th>
+                      <td>이 약이 어떤 질병에 효과가 있는지 (예: 심부전 치료)</td>
+                    </tr>
+                    <tr>
+                      <th>복용 방법</th>
+                      <td>어떻게 복용해야 하는지 (예: 하루 1회 1정 복용)</td>
+                    </tr>
+                    <tr>
+                      <th>주의사항</th>
+                      <td>복용 시 주의해야 할 점 (예: 간 기능 저하 환자 주의)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Section 3 -->
-    <section id="section3" class="section section03" aria-labelledby="약 병용금기 비교">
+    <!-- Section: 약 병용금기 비교 -->
+    <section id="section3" class="section compare" aria-labelledby="약 병용금기 비교">
       <div class="inner">
-        <h2>섹션 3: 서비스</h2>
-        <p>세 번째 섹션 내용이 들어갑니다.</p>
+        <h2 class="title primary">약 병용금기 <b>비교</b></h2>
+        <div class="col2">
+          <section class="compare-area" role="region">
+            <h3 class="compare-title">내가 먹는 약 검색</h3>
+            <div class="content">
+              <form class="search-form" role="search">
+                <label for="compare-search" class="sr-only">내가 먹는 약 검색</label>
+                <input
+                  type="search"
+                  id="compare-search"
+                  class="input"
+                  name="compare"
+                  placeholder="제품을 입력해주세요"
+                  autocomplete="off"
+                  required
+                />
+                <button type="submit" class="btn-icon" aria-label="검색">
+                  <span aria-hidden="true"><img src="./assets/images/icon/ico_search.svg" alt=""></span>
+                </button>
+              </form>
+              <article class="box">
+                <ul class="chk-list">
+                  <li class="checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-1" value="checkbox-unique-id-1" checked>
+                    <label class="checkbox__label" for="checkbox-unique-id-1">
+                      <span class="form-element__label">Checkbox Label</span>
+                      <span class="checkbox_faux">
+                        <i class="icon"></i>
+                      </span> 
+                    </label>
+                  </li>
+                  <li class="checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-2" value="checkbox-unique-id-2">
+                    <label class="checkbox__label" for="checkbox-unique-id-2">
+                      <span class="form-element__label">Checkbox Label</span>
+                      <span class="checkbox_faux">
+                        <i class="icon"></i>
+                      </span> 
+                    </label>
+                  </li>
+                  <li class="checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-3" value="checkbox-unique-id-3">
+                    <label class="checkbox__label" for="checkbox-unique-id-3">
+                      <span class="form-element__label">Checkbox Label</span>
+                      <span class="checkbox_faux">
+                        <i class="icon"></i>
+                      </span> 
+                    </label>
+                  </li>
+                  <li class="checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-4" value="checkbox-unique-id-4">
+                    <label class="checkbox__label" for="checkbox-unique-id-4">
+                      <span class="form-element__label">Checkbox Label</span>
+                      <span class="checkbox_faux">
+                        <i class="icon"></i>
+                      </span> 
+                    </label>
+                  </li>
+
+                </ul>
+              </article>
+            </div>
+          </section>
+          <div class="divider"></div>
+          <section class="compare-area" role="region">
+            <h3 class="compare-title">선택된 약 보관함</h3>
+            <div class="content">
+              <div class="list-meta">총 <strong>2개</strong> 선택</div>
+              <article class="box">
+                <ul class="list scroll">
+                  <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
+                  <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
+                  <li><p>대한민국에서 생산된 어린이용 타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)과 함께 추가적으로 함유된 비타민C, </p></li>
+                  <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
+                  <li><p>대한민국에서 생산된 어린이용 타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)과 함께 추가적으로 함유된 비타민C, </p></li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </div>
+        <div class="btn-area">
+          <button type="button" class="btn outline">결과보기</button>
+        </div>
       </div>
     </section>
 
     <!-- Section 4 (Swiper) -->
-    <section id="section4" class="section section04" aria-labelledby="관련 도서">
+    <section id="section4" class="section reference" aria-labelledby="관련 도서">
       <div class="inner">
         <h2 id="section4-title">섹션 4: 갤러리</h2>
         <!-- Swiper container -->

@@ -7,11 +7,11 @@ export default function initSwiper() {
       spaceBetween: 20,
       loop: true,
       navigation: {
-        nextEl: '.section04 .swiper-button-next',
-        prevEl: '.section04 .swiper-button-prev',
+        nextEl: '.reference .swiper-button-next',
+        prevEl: '.reference .swiper-button-prev',
       },
       pagination: {
-        el: '.section04 .swiper-pagination',
+        el: '.reference .swiper-pagination',
         type: 'progressbar',
       },
       breakpoints: {
