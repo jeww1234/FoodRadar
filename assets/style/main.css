@@ -161,6 +161,7 @@
   gap: 2.4rem;
   position: relative;
   overflow-y: auto;
+  flex: 1;
 }
 
 .col3 .box {
@@ -191,6 +192,7 @@
 }
 
 .box {
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 3.2rem;
@@ -319,11 +321,15 @@
 }
 
 .list-meta {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
   width: 100%;
+  height: 5.6rem;
   text-align: left;
   font-size: 1.8rem;
   line-height: 150%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .list-meta strong {
@@ -403,7 +409,7 @@
 }
 
 .reference .inner {
-  padding: 9rem 0 18.8rem
+  padding: 9rem 0 27.8rem
 }
 
 /*----------------------
@@ -944,9 +950,10 @@
 .member-list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
-  max-width: 1340px;
+  max-width: var(--footer-max-width);
   justify-content: space-between;
 }
 
@@ -973,3 +980,66 @@
   font-size: 1rem;
   line-height: 1;
 }
+
+/*----------------------
+  Responsive
+----------------------*/
+/* 일반 데스크탑 (1279px 이하) */
+@media (max-width: 1279px) {
+  /* 작은 데스크탑 & 태블릿 가로 */
+  :root {
+    --container-max-width: 960px;
+    --footer-max-width: 960px;
+  }
+  :where(html) {
+    font-size: 56.25%;
+  }
+  .visual-content {
+    text-align: center;
+  }
+  .reference .inner {
+    padding-bottom: 31.8rem;
+  }
+  #fp-nav ul li .fp-tooltip.fp-right {
+    inset: initial;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  #fp-nav ul li:hover .fp-tooltip, 
+  #fp-nav.fp-show-active a.active+.fp-tooltip {
+    transition: initial;
+  }
+  #fp-nav ul li a.active span::before, 
+  #fp-nav ul li:hover a.active span::before, 
+  .fp-slidesNav ul li a.active span::before, 
+  .fp-slidesNav ul li:hover a.active span::before {
+    content: none;
+  }
+  #fp-nav.fp-right {
+    right: initial;
+    left: 1rem
+  }
+  .member-list {
+    justify-content: flex-start;
+  }
+}
+
+/* 태블릿 (1023px 이하) */
+@media (max-width: 1023px) {
+  /* 태블릿 & 작은 노트북 */
+  :root {
+    --container-max-width: 720px;
+    --footer-max-width: 720px;
+  }
+  :where(html) {
+    font-size: 50%;
+  }
+}
+
+/* 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  /* 스마트폰 */
+}
+
