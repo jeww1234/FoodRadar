@@ -1,67 +1,69 @@
-// let serverItems = [];
-//       let allItems = [];
+let serverItems = [];
+let allItems = [];
 
-//       fetch("medicine-product-img.json")
-//         .then((res) => res.json())
-//         .then((data) => {
-//           console.log("제이슨 서버", data);
-//           serverItems = data.item1;
-//           allItems = data.item2;
-//           console.log(serverItems);
-//           console.log(allItems);
-//         });
+fetch("./db/medicine-product-img.json")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log("제이슨 서버", data);
+    serverItems = data.item1;
+    allItems = data.item2;
+    console.log(serverItems);
+    console.log(allItems);
+  });
 
-//       const userInput = document.getElementById("userInput");
-//       const addButton = document.getElementById("addButton");
-//       const resultArea = document.getElementById("resultArea");
-//       const listArea = document.getElementById("listArea");
-//       const itemImgArea = document.getElementById("itemImgArea");
+const userInput = document.getElementById("ingredient-search");
+const addButton = document.getElementById("productAddButton");
+const resultArea = document.getElementById("productResultArea");
+const listArea = document.getElementById("productListArea");
+const itemImgArea = document.getElementById("productItemImgArea");
 
-//       const searchItem = () => {
-//         console.log(userInput.value);
-//         const inputValue = userInput.value.trim();
+const searchItem = () => {
+  console.log(userInput.value);
+  const inputValue = userInput.value.trim();
 
-//         const matcheditem = serverItems.filter((item) =>
-//           item.ITEM_NAME.includes(inputValue)
-//         );
-//         console.log("matcheditem", matcheditem);
-//         if (matcheditem.length > 0) {
-//           listArea.innerHTML = "";
-//           matcheditem.forEach((item) => {
-//             const p = document.createElement("p");
-//             p.textContent = item.ITEM_NAME;
-//             p.style.cursor = "pointer";
-//             p.addEventListener("click", () => {
-//               resultArea.innerHTML = `<p><strong>ITEM_NAME:</strong> ${item.ITEM_NAME}</p>
-//               <p><strong>EFCY:</strong> ${item.EFCY}</p>
-//               <p><strong>SEQ:</strong> ${item.SEQ}</p>
-//               <p><strong>STORAGE:</strong> ${item.STORAGE}</p>
-//               <p><strong>USAGE:</strong> ${item.USAGE}</p>
-//               <p><strong>USEITEM:</strong> ${item.USEITEM}</p>
-//           `;
-//               console.log("item", item);
-//               console.log("all", allItems.length);
-//               const matchedImage = allItems.find(
-//                 (img) => String(img.SEQ) === String(item.SEQ)
-//               );
-//               const imageUrl = matchedImage?.IMG;
-//               console.log("matchedImage:", matchedImage);
-//               console.log("이미지 URL:", imageUrl);
+  const matcheditem = serverItems.filter((item) =>
+    item.ITEM_NAME.includes(inputValue)
+  );
+  console.log("matcheditem", matcheditem);
+  if (matcheditem.length > 0) {
+    listArea.innerHTML = "";
+    matcheditem.forEach((item) => {
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      p.textContent = item.ITEM_NAME;
+      p.style.cursor = "pointer";
+      p.addEventListener("click", () => {
+        resultArea.innerHTML = `<tr><th>제품명</th><td>${item.ITEM_NAME}</td></tr>
+              <tr><th>효능 효과</th><td>${item.EFCY}</td></tr>                            
+              <tr><th>복용 방법</th><td>${item.USAGE}</td></tr>              
+              <tr><th>저장 방법</th><td>${item.STORAGE}</td></tr>
+          `;
+        console.log("item", item);
+        console.log("all", allItems.length);
+        const matchedImage = allItems.find(
+          (img) => String(img.SEQ) === String(item.SEQ)
+        );
+        const imageUrl = matchedImage?.IMG;
+        console.log("matchedImage:", matchedImage);
+        console.log("이미지 URL:", imageUrl);
 
-//               const imgTag = itemImgArea.querySelector("img");
-//               if (imageUrl) {
-//                 imgTag.src = imageUrl;
-//                 imgTag.alt = item.ITEM_NAME;
-//               } else {
-//                 imgTag.src = "";
-//                 imgTag.alt = "이미지 없음";
-//               }
-//             });
-//             listArea.appendChild(p);
-//           });
-//         } else {
-//           console.log("없음");
-//           listArea.innerHTML = "<p>검색 결과 없음</p>";
-//         }
-//       };
-//       addButton.addEventListener("click", searchItem);
+        const imgTag = itemImgArea.querySelector("img");
+        if (imageUrl) {
+          imgTag.src = imageUrl;
+          imgTag.alt = item.ITEM_NAME;
+        } else {
+          imgTag.src = "";
+          imgTag.alt = "이미지 없음";
+        }
+      });
+      li.appendChild(p);
+      listArea.appendChild(li);
+    });
+  } else {
+    console.log("없음");
+    p.textContent = "검색 결과 없음";
+    li.appendChild(p);
+    listArea.appendChild(li);
+  }
+};
+addButton.addEventListener("click", searchItem);
