@@ -197,7 +197,7 @@
           </section>
         </div>
         <div class="btn-area">
-          <button type="button" class="btn outline">결과보기</button>
+          <button type="button" id="openBtn" class="btn outline">결과보기</button>
         </div>
       </div>
     </section>
@@ -303,8 +303,19 @@
       <li><a>item</a></li>
     </ul>
     <p>포트폴리오를 위한 사이트 입니다<br>
-상업적 목적이 없습니다</p>
+      상업적 목적이 없습니다</p>
   </footer>
+
+  <!-- 팝업 success:가능 / error:불가능 -->
+  <div id="popup" class="popup success">
+    <div class="popup-content">
+      <h2 class="popup-title">병용 <strong>가능</strong>한 약 입니다</h2>
+      <figure class="popup-img">
+        <img src="./assets/images/temp/pic_temp_detail.png" alt="">
+      </figure>
+      <button id="closeBtn" class="btn">닫기</button>
+    </div>
+  </div>
 
   <!-- fullPage.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
