@@ -1,57 +1,53 @@
-// import axios from "axios";
-// import fs from "fs";
-// import dotenv from "dotenv";
-// dotenv.config();    
-// const key = process.env.api_key; // 국립중앙도서관 API 키 입력
-// let abcd = [];
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('books-area');
+  if (!container) return;
 
-// // 검색 함수
-// const searchBooks = async () => {
-//   const kwd = document.getElementById("keyword").value.trim();
-//   if (!kwd) {
-//     alert("검색어를 입력하세요!");
-//     return;
-//   }
+  const CERT_KEY = "b7aa4a45b752f3922e351f3626281be53c87c1ca97b1cda9133e6e1f4839f3f9"; // 👉 국립중앙도서관 발급 키 입력
+  const url = `https://www.nl.go.kr/seoji/SearchApi.do?cert_key=${CERT_KEY}&result_style=json&page_no=1&page_size=50&title=약`;
 
-//   // 검색어를 URL 인코딩해서 API 호출
-//   const url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${key}&srchTarget=total&kwd=${encodeURIComponent(kwd)}&pageNum=1&pageSize=10&category=도서&apiType=json`);
-  
-//   try {
-//     const response = await fetch(url);
-//     const sample = await response.json();
-//     abcd = sample.result || [];
+  // HTML 태그 제거 (검색 결과 title에 <span> 태그가 포함되는 경우 대비)
+  function stripHtml(html) {
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
 
-//     console.log("API 응답:", sample);
-//     render(); // 데이터 다 받아온 후 렌더링
-//   } catch (err) {
-//     console.error("API 호출 에러:", err);
-//     document.getElementById("exm").innerHTML = "<p>검색 중 오류가 발생했습니다.</p>";
-//   }
-// }
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log("API 응답:", data);
 
-// // 출력 함수
-// const render = () => {
-//   // imageUrl이 존재하는 책만 추려내기
-//   const filtered = abcd.filter(books => books.imageUrl && books.imageUrl.trim() !== "");
+      if (!data.docs || !Array.isArray(data.docs)) {
+        console.warn("docs 배열이 없습니다.");
+        return;
+      }
 
-//   if (!filtered.length) {
-//     document.getElementById("exm").innerHTML = "<p>이미지가 있는 검색 결과가 없습니다.</p>";
-//     return;
-//   }
+      // 이미지 있는 도서만 필터링, 최대 10개
+      const seen = new Set();
+      const filteredBooks = data.docs
+        .filter(book => book.TITLE_URL) // 이미지 있는 도서
+        .filter(book => {
+          const title = stripHtml(book.TITLE);
+          if (seen.has(title)) return false;
+          seen.add(title);
+          return true;
+        })
+        .slice(0, 10);
 
-//   const exmHTML = filtered.map(books => {
-//     const imgUrl = `https://cover.nl.go.kr/${books.imageUrl}`;
-//     return `
-//       <div class="book-card" style="margin-bottom:20px;">
-//         <h2>${books.titleInfo}</h2>
-//         <div class="img-area">
-//           <a href="${books.detailLink}" target="_blank">
-//             <img src="${imgUrl}" alt="${books.titleInfo}" style="max-width:150px;">
-//           </a>
-//         </div>
-//       </div>
-//     `;
-//   }).join("");
-
-//   document.getElementById("exm").innerHTML = exmHTML;
-// }
+      // DOM 생성
+      container.innerHTML = filteredBooks.map(d => {
+        const cleanTitle = stripHtml(d.TITLE);
+        return `
+          <article class="swiper-slide">
+            <figure class="card">
+              <div class="thumb">
+                <img src="${d.TITLE_URL}" alt="${cleanTitle}">
+              </div>
+              <figcaption class="card-title">${cleanTitle}</figcaption>
+            </figure>
+          </article>
+        `;
+      }).join('');
+    })
+    .catch(err => console.error("API 호출 실패:", err));
+});
