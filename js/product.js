@@ -21,6 +21,12 @@ const searchItem = () => {
   console.log(userInput.value);
   const inputValue = userInput.value.trim();
 
+  // 🔧 이전 결과 초기화
+  resultArea.innerHTML = "";
+  itemImgArea.querySelector("img").src = "./assets/images/temp/no-image.jpg";
+  itemImgArea.querySelector("img").alt = "이미지 없음";
+  listArea.innerHTML = "";
+
   const matcheditem = serverItems.filter((item) =>
     item.ITEM_NAME.includes(inputValue)
   );
@@ -71,3 +77,9 @@ const searchItem = () => {
   }
 };
 addButton.addEventListener("click", searchItem);
+userInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // 폼 제출 막기
+    searchItem(); // 검색 실행
+  }
+});
