@@ -91,14 +91,12 @@ openBtn.addEventListener("click", () => {
     popup.classList.add("error");
     popupTitle.textContent = "불가능";
     popupImg.src = "./assets/images/temp/error_dur.png";
-    // popupImg.src = "./assets/images/temp/pic_temp_detail.png";
   } else {
     // 가능할경우
     popup.classList.remove("error");
     popup.classList.add("success");
     popupTitle.textContent = "가능";
     popupImg.src = "./assets/images/temp/success_dur.png";
-    // popupImg.src = "./assets/images/temp/pic_temp_detail.png";
   }
 
   popup.style.display = "block";
