@@ -197,7 +197,7 @@
           </section>
         </div>
         <div class="btn-area">
-          <button type="button" class="btn outline">결과보기</button>
+          <button type="button" id="openBtn" class="btn outline">결과보기</button>
         </div>
       </div>
     </section>
@@ -294,17 +294,28 @@
   </main>
 
   <footer class="footer">
-    <small>&copy; 제작 참여</small>
-    <ul>
-      <li><a>item</a></li>
-      <li><a>item</a></li>
-      <li><a>item</a></li>
-      <li><a>item</a></li>
-      <li><a>item</a></li>
+    <small>제작 참여</small>
+    <ul class="member-list">
+      <li><span class="tag">김기목</span><a href="https://github.com/YS-0911" target="_blank">https://github.com/YS-0911</a></li>
+      <li><span class="tag">박병훈</span><a href="https://github.com/editor-7" target="_blank">https://github.com/editor-7</a></li>
+      <li><span class="tag">안윤희</span><a href="https://github.com/YunheeAhn" target="_blank">https://github.com/YunheeAhn</a></li>
+      <li><span class="tag">유하영</span><a href="https://github.com/vivre327" target="_blank">https://github.com/vivre327</a></li>
+      <li><span class="tag">장진혁</span><a href="https://github.com/YS-0911" target="_blank">https://github.com/YS-0911</a></li>
     </ul>
     <p>포트폴리오를 위한 사이트 입니다<br>
-상업적 목적이 없습니다</p>
+      상업적 목적이 없습니다</p>
   </footer>
+
+  <!-- 팝업 success:가능 / error:불가능 -->
+  <div id="popup" class="popup success">
+    <div class="popup-content">
+      <h2 class="popup-title">병용 <strong>가능</strong>한 약 입니다</h2>
+      <figure class="popup-img">
+        <img src="./assets/images/temp/pic_temp_detail.png" alt="">
+      </figure>
+      <button id="closeBtn" class="btn">닫기</button>
+    </div>
+  </div>
 
   <!-- fullPage.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
