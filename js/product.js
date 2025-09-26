@@ -21,25 +21,24 @@ const searchItem = () => {
   console.log(userInput.value);
   const inputValue = userInput.value.trim();
 
+  // 🔧 이전 결과 초기화
+  resultArea.innerHTML = "";
+  itemImgArea.querySelector("img").src = "./assets/images/temp/no-image.jpg";
+  itemImgArea.querySelector("img").alt = "이미지 없음";
+  listArea.innerHTML = "";
+
   const matcheditem = serverItems.filter((item) =>
     item.ITEM_NAME.includes(inputValue)
   );
   console.log("matcheditem", matcheditem);
   if (matcheditem.length > 0) {
-    listArea.innerHTML = "";
     matcheditem.forEach((item) => {
       const li = document.createElement("li");
       const p = document.createElement("p");
       p.textContent = item.ITEM_NAME;
       p.style.cursor = "pointer";
       p.addEventListener("click", () => {
-        resultArea.innerHTML = `<tr><th>제품명</th><td>${item.ITEM_NAME}</td></tr>
-              <tr><th>효능 효과</th><td>${item.EFCY}</td></tr>                            
-              <tr><th>복용 방법</th><td>${item.USAGE}</td></tr>              
-              <tr><th>저장 방법</th><td>${item.STORAGE}</td></tr>
-          `;
-        console.log("item", item);
-        console.log("all", allItems.length);
+        //이미지
         const matchedImage = allItems.find(
           (img) => String(img.SEQ) === String(item.SEQ)
         );
@@ -48,14 +47,33 @@ const searchItem = () => {
         console.log("이미지 URL:", imageUrl);
 
         const imgTag = itemImgArea.querySelector("img");
-        if (imageUrl) {
-          imgTag.src = imageUrl;
-          imgTag.alt = item.ITEM_NAME;
-        } else {
-          imgTag.src = "./assets/images/temp/no-image.jpg";
+
+        imgTag.onload = () => {
+          //정보
+          resultArea.innerHTML = `<tr><th>제품명</th><td>${item.ITEM_NAME}</td></tr>
+              <tr><th>효능 효과</th><td>${item.EFCY}</td></tr>                            
+              <tr><th>복용 방법</th><td>${item.USAGE}</td></tr>              
+              <tr><th>저장 방법</th><td>${item.STORAGE}</td></tr>
+          `;
+        };
+
+        imgTag.onerror = () => {
           imgTag.alt = "이미지 없음";
-        }
+          resultArea.innerHTML = `<tr><th>제품명</th><td>${item.ITEM_NAME}</td></tr>
+              <tr><th>효능 효과</th><td>${item.EFCY}</td></tr>                            
+              <tr><th>복용 방법</th><td>${item.USAGE}</td></tr>              
+              <tr><th>저장 방법</th><td>${item.STORAGE}</td></tr>
+          `;
+        };
+
+        imgTag.src = imageUrl || "./assets/images/temp/no-image.jpg";
+        imgTag.alt = item.ITEM_NAME || "이미지 없음";
+
+        console.log("item", item);
+        console.log("all", allItems.length);
       });
+
+      
       li.appendChild(p);
       listArea.appendChild(li);
     });
@@ -71,3 +89,9 @@ const searchItem = () => {
   }
 };
 addButton.addEventListener("click", searchItem);
+userInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // 폼 제출 막기
+    searchItem(); // 검색 실행
+  }
+});

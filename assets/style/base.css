@@ -48,13 +48,16 @@ body {
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  :where(html) {
-    font-size: 56.25%;
+/* 태블릿 (1023px 이하) */
+@media (max-width: 1023px) {
+  body {
+    font-size: 1.6rem;
   }
 }
-@media (min-width: 1920px) {
-  :where(html) {
-    font-size: 68.75%;
+
+/* 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  body {
+    font-size: 1.4rem;
   }
 }
