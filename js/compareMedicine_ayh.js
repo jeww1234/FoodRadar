@@ -99,7 +99,7 @@ openBtn.addEventListener("click", () => {
     popupImg.src = "./assets/images/temp/success_dur.png";
   }
 
-  popup.style.display = "block";
+  popup.style.display = "flex";
 });
 
 // 팝업 닫기
