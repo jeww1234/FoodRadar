@@ -35,8 +35,7 @@ const searchItem = () => {
       p.addEventListener("click", () => {
         resultArea.innerHTML = `<tr><th>제품명</th><td>${item.ITEM_NAME}</td></tr>
               <tr><th>효능 효과</th><td>${item.EFCY}</td></tr>                            
-              <tr><th>복용 방법</th><td>${item.USAGE}</td></tr>
-              <tr><th>복용 대상</th><td>${item.USEITEM}</td></tr>
+              <tr><th>복용 방법</th><td>${item.USAGE}</td></tr>              
               <tr><th>저장 방법</th><td>${item.STORAGE}</td></tr>
           `;
         console.log("item", item);
