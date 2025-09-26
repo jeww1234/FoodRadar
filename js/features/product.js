@@ -52,7 +52,7 @@ const searchItem = () => {
           imgTag.src = imageUrl;
           imgTag.alt = item.ITEM_NAME;
         } else {
-          imgTag.src = "";
+          imgTag.src = "./assets/images/temp/no-image.jpg";
           imgTag.alt = "이미지 없음";
         }
       });
@@ -61,7 +61,11 @@ const searchItem = () => {
     });
   } else {
     console.log("없음");
+    listArea.innerHTML = ""; // 이전 결과 초기화
+    const li = document.createElement("li");
+    const p = document.createElement("p");
     p.textContent = "검색 결과 없음";
+
     li.appendChild(p);
     listArea.appendChild(li);
   }
