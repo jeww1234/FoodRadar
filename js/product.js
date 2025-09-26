@@ -111,6 +111,6 @@ addButton.addEventListener("click", searchItem);
 userInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault(); // 폼 자동 제출 방지
-    searchItem(); // 검색 실행
+    searchItem(); // 검색 실행!
   }
 });
