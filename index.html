@@ -51,44 +51,39 @@
       </div>
     </section>
     
-    <!-- Section: 약 성분 검색 -->
+    <!-- Section: 약 제품 검색! -->
     <section id="section2" class="section ingredient" aria-labelledby="약 성분 검색">
       <div class="inner">
-        <h2 class="title primary">약 성분 <b>검색</b></h2>
+        <h2 class="title primary">제품명 <b>검색</b></h2>
         <div class="content">
           <form class="search-form" role="search" aria-label="약 성분 검색">
-            <label for="ingredient-search" class="sr-only">약 성분명 검색</label>
+            <label for="ingredient-search" class="sr-only">제품명 검색</label>
             <input
               type="search"
-              id="ingredient-search"
+              id="ingredient-search" 
               class="input"
               name="ingredient"
               placeholder="제품을 입력해주세요"
               autocomplete="off"
               required
             />
-            <button type="submit" class="btn-icon" aria-label="검색">
-              <span aria-hidden="true"><img src="./assets/images/icon/ico_search.svg" alt=""></span>
+            <button type="button" class="btn-icon" aria-label="검색">
+              <span aria-hidden="true"><img src="./assets/images/icon/ico_search.svg" alt="" id="productAddButton"></span>
             </button>
           </form>
           <div class="col3">
             <!-- 제품리스트 -->
             <article class="box">
               <h3 class="box-title">제품리스트</h3>
-              <ul class="list scroll">
-                <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
-                <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
-                <li><p>대한민국에서 생산된 어린이용 타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)과 함께 추가적으로 함유된 비타민C, </p></li>
-                <li><p>어린이타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)</p></li>
-                <li><p>대한민국에서 생산된 어린이용 타이레놀산 160밀리그램(아세트아미노펜)_(0.177778g/0.304g)과 함께 추가적으로 함유된 비타민C, </p></li>
+              <ul class="list scroll" id="productListArea">
               </ul>
             </article>
             <!-- 이미지 -->
             <article class="box">
               <h3 class="box-title line">이미지</h3>
               <div class="content">
-                <figure class="box-img">
-                  <img src="./assets/images/temp/pic_temp_detail.png" alt="약품 이미지">
+                <figure class="box-img" id="productItemImgArea">
+                  <img src="" alt="약품 이미지">
                   <figcaption class="sr-only">샘플 약품 이미지</figcaption>
                 </figure>
               </div>
@@ -108,23 +103,7 @@
                       <th>예시</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <th>제품명</th>
-                      <td>약품의 이름 (예: 삼스카정 30밀리그램)</td>
-                    </tr>
-                    <tr>
-                      <th>효능·효과</th>
-                      <td>이 약이 어떤 질병에 효과가 있는지 (예: 심부전 치료)</td>
-                    </tr>
-                    <tr>
-                      <th>복용 방법</th>
-                      <td>어떻게 복용해야 하는지 (예: 하루 1회 1정 복용)</td>
-                    </tr>
-                    <tr>
-                      <th>주의사항</th>
-                      <td>복용 시 주의해야 할 점 (예: 간 기능 저하 환자 주의)</td>
-                    </tr>
+                  <tbody id="productResultArea">                    
                   </tbody>
                 </table>
               </section>
@@ -226,63 +205,81 @@
     <!-- Section 4 (Swiper) -->
     <section id="section4" class="section reference" aria-labelledby="관련 도서">
       <div class="inner">
-        <h2 id="section4-title">섹션 4: 갤러리</h2>
+        <h2 class="title">관련 <b>도서</b></h2>
         <!-- Swiper container -->
         <div class="custom-container">
           <div class="swiper custom-swiper">
             <div class="swiper-wrapper">
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 1</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 1</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 2</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 2</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 3</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 3</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 4</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 4</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 5</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 5</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 6</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 6</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 7</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 7</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 8</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 8</figcaption>
                 </figure>
               </article>
               <article class="swiper-slide">
                 <figure class="card">
-                  <div class="thumb"></div>
-                  <figcaption class="title">아이템 10</figcaption>
+                  <div class="thumb">
+                    <img src="./assets/images/temp/pic_temp_book.png" alt="">
+                  </div>
+                  <figcaption class="card-title">아이템 10</figcaption>
                 </figure>
               </article>
             </div>
@@ -313,5 +310,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
   <!-- Swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./js/features/product.js"></script>
 </body>
 </html>
