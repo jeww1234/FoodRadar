@@ -2,17 +2,18 @@ export default function initFullpage() {
   const element = document.getElementById("fullpage");
   if (!element) return;
 
-  new fullpage('#fullpage', {
+  new fullpage("#fullpage", {
     autoScrolling: true,
     navigation: true,
-    navigationTooltips: ['홈', '검색', '비교', '도서'],
+    navigationTooltips: ["홈", "검색", "비교", "도서"],
     showActiveTooltip: true,
-    navigationPosition: 'right',
+    navigationPosition: "right",
+    normalScrollElements: ".box",
 
     onLeave: (origin, destination) => {
-      const header = document.querySelector('.header');
-      const footer = document.querySelector('.footer');
-      const nav = document.querySelector('#fp-nav');
+      const header = document.querySelector(".header");
+      const footer = document.querySelector(".footer");
+      const nav = document.querySelector("#fp-nav");
 
       // header
       // if (destination.index === 0) {
@@ -23,14 +24,14 @@ export default function initFullpage() {
 
       // footer
       if (destination.isLast) {
-        footer?.classList.add('show');
+        footer?.classList.add("show");
       } else {
-        footer?.classList.remove('show');
+        footer?.classList.remove("show");
       }
 
       // Nav
-      [...nav.classList].forEach(cls => {
-        if (cls.startsWith('nav-section')) {
+      [...nav.classList].forEach((cls) => {
+        if (cls.startsWith("nav-section")) {
           nav.classList.remove(cls);
         }
       });
@@ -38,6 +39,5 @@ export default function initFullpage() {
       // Add Class
       nav.classList.add(`nav-section${destination.index + 1}`);
     },
-    
   });
 }
