@@ -145,7 +145,9 @@ function renderStore() {
 openBtn.addEventListener("click", () => {
   if (store.length !== 2) {
     alert("비교하려면 보관함에 약을 2개 담아주세요.");
-    return; // 2개가 아닐 땐 팝업 열지 않음
+    // 팝업 무조건 닫기
+    popup.style.display = "none";
+    return;
   }
 
   // 병용금기 검사
@@ -153,16 +155,16 @@ openBtn.addEventListener("click", () => {
 
   // 병용금기라면?
   if (isContraindicated) {
-    popup.classList.remove("success"); // success 클래스 제거
-    popup.classList.add("error"); // error 클래스 추가
-    popupTitle.textContent = "불가능"; // 병용금기
+    popup.classList.remove("success");
+    popup.classList.add("error");
+    popupTitle.textContent = "불가능";
     popupImg.src = "./assets/images/temp/error_dur.png";
   }
   // 병용금기 아니라면?
   else {
-    popup.classList.remove("error"); // error 클래스 제거
-    popup.classList.add("success"); // success 클래스 추가
-    popupTitle.textContent = "가능"; // 병용금기 아님
+    popup.classList.remove("error");
+    popup.classList.add("success");
+    popupTitle.textContent = "가능";
     popupImg.src = "./assets/images/temp/success_dur.png";
   }
 
