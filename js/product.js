@@ -32,9 +32,9 @@ const searchItem = () => {
   listArea.innerHTML = ""; // 리스트 초기화
 
   // 제품명 기준으로 필터링
-  const matcheditem = serverItems.filter((item) =>
-    item.ITEM_NAME.includes(inputValue)
-  );
+  const matcheditem = inputValue
+    ? serverItems.filter((item) => item.ITEM_NAME.includes(inputValue))
+    : [];
   console.log("matcheditem", matcheditem);
 
   // 검색 결과가 있을 경우
