@@ -49,7 +49,10 @@ searchButton.addEventListener("click", (e) => {
   // 기본 이벤트 제거
   e.preventDefault();
   const query = normalizeString(searchInput.value.trim()); // 공백 제거 및 정규화
-  if (!query) return; // 빈 값일 땐 검색 안 함
+  if (!query) {
+    alert("검색어를 입력해주세요.");
+    return;
+  }
 
   // 정규화된 문자열 기준 필터링 해서 검색하기
   const filtered = medicineData.filter((item) => normalizeString(item.name).includes(query));
