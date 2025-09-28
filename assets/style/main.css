@@ -370,16 +370,16 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
+  color: #6b6b6b;
 }
 
 .list li:not(:last-child) {
   border-bottom: 1px solid var(--point-color01);
 }
-.list li:hover {
-  background: var(--point-color01);
-}
+
 .list li:hover p {
-  color: var(--white-color);
+  color: var(--black-color);
+  font-weight: 500;
 }
 /* Checkbox List */
 .chk-list {
@@ -450,6 +450,7 @@
 }
 .store-item:hover p {
   color: var(--black-color) !important;
+  font-weight: 500;
 }
 
 .store-item:hover .delete-btn {
