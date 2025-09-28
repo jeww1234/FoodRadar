@@ -1405,6 +1405,12 @@
   .inner {
     padding: 60px 5% !important ;
   }
+  .col2 {
+    max-width: 100% !important;
+  }
+  .custom-container {
+    max-width: 100% !important;
+  }
   .col2 .box {
     min-height: 200px;
   }
