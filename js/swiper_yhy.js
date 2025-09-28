@@ -10,14 +10,11 @@ export default function initSwiper() {
         nextEl: '.reference .swiper-button-next',
         prevEl: '.reference .swiper-button-prev',
       },
-      pagination: {
-        el: '.reference .swiper-pagination',
-        type: 'progressbar',
-      },
       breakpoints: {
         1024: { slidesPerView: 5 },
         768: { slidesPerView: 3 },
         480: { slidesPerView: 2 },
+        280: { slidesPerView: 1 },
       }
     });
   }
