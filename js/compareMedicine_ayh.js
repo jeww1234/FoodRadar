@@ -116,7 +116,7 @@ function renderStore() {
     const li = document.createElement("li.store-item");
     li.innerHTML = `
       <p>${item.name}</p>
-      <button class="delete-btn" onclick="handleDelete('${item.id}')">삭제</button>
+      <button class="delete-btn" onclick="handleDelete('${item.id}')"> <i class="fas fa-trash"></i></button>
     `;
     storeList.appendChild(li);
   });
