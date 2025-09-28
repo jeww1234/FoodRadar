@@ -44,20 +44,6 @@
 
 body {
   font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-  font-size: 1.8rem;
+  font-size: 1rem;
   line-height: 1.5;
-}
-
-/* 태블릿 (1023px 이하) */
-@media (max-width: 1023px) {
-  body {
-    font-size: 1.6rem;
-  }
-}
-
-/* 모바일 (767px 이하) */
-@media (max-width: 767px) {
-  body {
-    font-size: 1.4rem;
-  }
 }
