@@ -9,6 +9,8 @@ export default function initFullpage() {
     showActiveTooltip: true,
     navigationPosition: "right",
     normalScrollElements: ".box",
+    scrollingSpeed: 700,
+    responsiveWidth: 768, // 768 이하일때는 스크롤 생성
 
     onLeave: (origin, destination) => {
       const header = document.querySelector(".header");
